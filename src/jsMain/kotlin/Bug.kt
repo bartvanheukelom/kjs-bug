@@ -23,8 +23,11 @@ class BuggyClass(private val strings: List<String>) {
     // making this constructor the primary makes the bug disappear
     constructor(s: List<StringBox>) : this(
             strings = s
-                    .map(StringBox::inside) // using this line will make strings inside list containing PublicThingState BAD
-//                    .map { it.inside }      // using this line will make strings inside list containing String           GOOD
+            // using the following line will result in:
+            //     IllegalArgumentException: strings[0] should be String but is BuggyClass
+                    .map(StringBox::inside)
+            // the following will give the correct result
+//                    .map { it.inside }
     )
 }
 
