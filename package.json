@@ -1,0 +1,10 @@
+{
+  "name": "kjs-bug",
+  "main": "index.js",
+  "scripts": {
+    "run": "node ."
+  },
+  "dependencies": {
+    "kotlin": "1.3.30"
+  }
+}
